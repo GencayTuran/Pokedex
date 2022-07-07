@@ -1,1 +1,64 @@
-<p>home works!</p>
+<!-- <div fxLayout="column">
+  <div> -->
+<div fxLayout="row" fxLayoutAlign="end start">
+  <fa-icon [icon]="faFilter"></fa-icon>
+  <mat-icon>sort</mat-icon>
+</div>
+<h2>Pokédex</h2>
+<!-- search bar -->
+<form fxLayout="row">
+  <mat-icon>search</mat-icon>
+  <mat-form-field
+    fxLayoutAlign="start center"
+    class="inputField"
+    appearance="fill"
+  >
+    <input matInput placeholder="Pokemon zoeken" />
+  </mat-form-field>
+</form>
+
+<div fxLayout="row">
+  <!-- My Team -->
+  <div class="navCard" fxLayout="column" fxLayoutAlign="end start">
+    <div>Mijn team</div>
+    <div>pokemons</div>
+  </div>
+
+  <!-- Favorites -->
+  <div class="navCard" fxLayout="column" fxLayoutAlign="end start">
+    <div>Favorieten</div>
+    <div>pokemons</div>
+  </div>
+</div>
+
+<!-- loop card here -->
+<div *ngFor="let pokemon of pokemons; let i = index">
+  <div class="pokeCard" fxLayout="row" fxLayoutAlign="space-between start">
+    <div fxLayout="row" fxLayoutAlign="start center">
+      <img src="{{ pokemon.sprites.front_default }}" />
+      <div fxLayout="column">
+        <p>{{ pokemon.name }}</p>
+        <p>{{ pokemon.id }}</p>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutGap="5px">
+      <div *ngFor="let type of pokemons[i].types">
+        {{ type.type.name }}
+      </div>
+    </div>
+  </div>
+</div>
+<!-- </div> -->
+<!-- <div>
+  <mat-sidenav-container>
+    <mat-sidenav mode="side">
+      <mat-sidenav-content>
+        <div fxLayout="row" fxLayoutAlign="space-between end">
+          <h4>Sorteren op</h4>
+          <mat-icon>cancel</mat-icon>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav>
+  </mat-sidenav-container>
+</div> -->
+<!-- </div> -->
