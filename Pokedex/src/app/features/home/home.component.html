@@ -1,8 +1,7 @@
-<!-- <div fxLayout="column">
-  <div> -->
 <div fxLayout="row" fxLayoutAlign="end start">
+  <mat-icon (click)="openBottomSheet()">sort</mat-icon>
+
   <fa-icon [icon]="faFilter"></fa-icon>
-  <mat-icon>sort</mat-icon>
 </div>
 <h2>Pokédex</h2>
 <!-- search bar -->
@@ -19,16 +18,31 @@
 
 <div fxLayout="row">
   <!-- My Team -->
-  <div class="navCard" fxLayout="column" fxLayoutAlign="end start">
-    <div>Mijn team</div>
-    <div>pokemons</div>
-  </div>
+
+  <mat-card
+    class="navCard"
+    matCardTitle
+    fxLayout="column"
+    fxLayoutAlign="end start"
+  >
+    <mat-card-title-group>
+      <mat-card-title>Mijn team</mat-card-title>
+      <mat-card-subtitle>pokemons</mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card>
 
   <!-- Favorites -->
-  <div class="navCard" fxLayout="column" fxLayoutAlign="end start">
-    <div>Favorieten</div>
-    <div>pokemons</div>
-  </div>
+  <mat-card
+    class="navCard"
+    matCardTitle
+    fxLayout="column"
+    fxLayoutAlign="end start"
+  >
+    <mat-card-title-group>
+      <mat-card-title>Favorieten</mat-card-title>
+      <mat-card-subtitle>pokemons</mat-card-subtitle>
+    </mat-card-title-group>
+  </mat-card>
 </div>
 
 <!-- loop card here -->
@@ -48,17 +62,3 @@
     </div>
   </div>
 </div>
-<!-- </div> -->
-<!-- <div>
-  <mat-sidenav-container>
-    <mat-sidenav mode="side">
-      <mat-sidenav-content>
-        <div fxLayout="row" fxLayoutAlign="space-between end">
-          <h4>Sorteren op</h4>
-          <mat-icon>cancel</mat-icon>
-        </div>
-      </mat-sidenav-content>
-    </mat-sidenav>
-  </mat-sidenav-container>
-</div> -->
-<!-- </div> -->
