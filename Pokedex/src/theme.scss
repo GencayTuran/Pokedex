@@ -22,3 +22,22 @@ $my-theme: mat-light-theme($my-theme-primary, $my-theme-accent,$my-theme-warn);
 
 @include angular-material-theme($my-theme)
 }
+
+@mixin button-bg($bg){
+    background-color: $bg;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    width: 100%;
+    height: 3em;
+    border-radius: 50px;
+    font-size: larger;
+    border: none;
+    &:active{
+        background: darken($bg,100%);
+        transition: all 0.3s ease;
+    }
+}
+
+.btn-confirm{
+    @include button-bg(#191919);
+}
