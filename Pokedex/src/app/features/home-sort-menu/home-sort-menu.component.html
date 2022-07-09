@@ -1,18 +1,25 @@
-<div fxLayout="row" fxLayoutAlign="space-between center">
-  <h3>Sorteren op</h3>
-  <mat-icon>cancel</mat-icon>
+<div fxLayout="column" fxLayoutGap="10px">
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+    <h3>Sorteren op</h3>
+    <mat-icon (click)="openLink($event)">cancel</mat-icon>
+  </div>
+  <mat-chip-list>
+    <mat-chip>
+      <fa-icon [icon]="faArrowAZ"></fa-icon>
+      Alfabetisch oplopend
+    </mat-chip>
+    <mat-chip>
+      <fa-icon [icon]="faArrowZA"></fa-icon>
+      Alfabetisch aflopend
+    </mat-chip>
+    <mat-chip>
+      <fa-icon [icon]="faArrow19"></fa-icon>
+      Numeriek oplopend
+    </mat-chip>
+    <mat-chip>
+      <fa-icon [icon]="faArrow91"></fa-icon>
+      Numeriek aflopend
+    </mat-chip>
+  </mat-chip-list>
+  <button class="btn-confirm">Toepassen</button>
 </div>
-<mat-chip-list>
-  <mat-chip>Alfabetisch oplopend</mat-chip>
-  <mat-chip>Alfabetisch aflopend</mat-chip>
-  <mat-chip>Numeriek oplopend</mat-chip>
-  <mat-chip>Numeriek aflopend</mat-chip>
-</mat-chip-list>
-<button
-  mat-flat-button
-  style="width: 100%; border-radius: 50px"
-  mat-fab
-  color="primary"
->
-  Toepassen
-</button>
