@@ -1,64 +1,65 @@
-<div fxLayout="row" fxLayoutAlign="end start">
-  <mat-icon (click)="openBottomSheet()">sort</mat-icon>
-
-  <fa-icon [icon]="faFilter"></fa-icon>
-</div>
-<h2>Pokédex</h2>
-<!-- search bar -->
-<form fxLayout="row">
-  <mat-icon>search</mat-icon>
-  <mat-form-field
-    fxLayoutAlign="start center"
-    class="inputField"
-    appearance="fill"
-  >
-    <input matInput placeholder="Pokemon zoeken" />
-  </mat-form-field>
-</form>
-
-<div fxLayout="row">
-  <!-- My Team -->
-
-  <mat-card
-    class="navCard"
-    matCardTitle
-    fxLayout="column"
-    fxLayoutAlign="end start"
-  >
-    <mat-card-title-group>
-      <mat-card-title>Mijn team</mat-card-title>
-      <mat-card-subtitle>pokemons</mat-card-subtitle>
-    </mat-card-title-group>
-  </mat-card>
-
-  <!-- Favorites -->
-  <mat-card
-    class="navCard"
-    matCardTitle
-    fxLayout="column"
-    fxLayoutAlign="end start"
-  >
-    <mat-card-title-group>
-      <mat-card-title>Favorieten</mat-card-title>
-      <mat-card-subtitle>pokemons</mat-card-subtitle>
-    </mat-card-title-group>
-  </mat-card>
-</div>
-
-<!-- loop card here -->
-<div *ngFor="let pokemon of pokemons; let i = index">
-  <div class="pokeCard" fxLayout="row" fxLayoutAlign="space-between start">
-    <div fxLayout="row" fxLayoutAlign="start center">
-      <img src="{{ pokemon.sprites.front_default }}" />
-      <div fxLayout="column">
-        <p>{{ pokemon.name }}</p>
-        <p>{{ pokemon.id }}</p>
-      </div>
-    </div>
-    <div fxLayout="row" fxLayoutGap="5px">
-      <div *ngFor="let type of pokemons[i].types">
-        {{ type.type.name }}
-      </div>
-    </div>
+<html>
+  <div fxLayout="row" fxLayoutAlign="end center">
+    <fa-icon class="topIcon" [icon]="faFilter"></fa-icon>
+    <mat-icon class="topIcon" (click)="openBottomSheet()">sort</mat-icon>
   </div>
-</div>
+  <h1>Pokédex</h1>
+  <!-- search bar -->
+  <form fxLayout="row">
+    <mat-form-field appearance="outline">
+      <mat-label style="font-size: larger" fxLayoutAlign="start center">
+        <mat-icon>search</mat-icon>
+        Pokemon zoeken
+      </mat-label>
+      <input matInput />
+    </mat-form-field>
+  </form>
+
+  <div class="navCards" fxLayout="row" fxLayoutGap="10px">
+    <!-- My Team -->
+    <mat-card class="navCard" matCardTitle>
+      <div fxLayout="column" fxLayoutAlign="end start">
+        <mat-card-title-group>
+          <mat-card-title>Mijn team</mat-card-title>
+          <mat-card-subtitle>pokemons</mat-card-subtitle>
+        </mat-card-title-group>
+      </div>
+    </mat-card>
+
+    <!-- Favorites -->
+    <mat-card class="navCard" matCardTitle>
+      <div fxLayout="column" fxLayoutAlign="end start">
+        <mat-card-title-group>
+          <mat-card-title>Favorieten</mat-card-title>
+          <mat-card-subtitle>pokemons</mat-card-subtitle>
+        </mat-card-title-group>
+      </div>
+    </mat-card>
+  </div>
+
+  <div *ngFor="let pokemon of pokemons; let i = index">
+    <mat-card
+      class="pokeCard"
+      fxLayout="row"
+      fxLayoutAlign="space-between start"
+    >
+      <div fxLayout="row" fxLayoutAlign="start center">
+        <img src="{{ pokemon.sprites.front_default }}" />
+        <mat-card-title-group>
+          <mat-card-title
+            ><b>{{ pokemon.name | titlecase }}</b></mat-card-title
+          >
+          <mat-card-subtitle>Nr. {{ pokemon.id }}</mat-card-subtitle>
+        </mat-card-title-group>
+      </div>
+      <div fxLayoutAlign="start center">
+        <mat-chip-list style="margin: 10px 10px 0 0">
+          <mat-chip *ngFor="let type of pokemons[i].types">
+            {{ type.type.name }}
+          </mat-chip>
+        </mat-chip-list>
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </div>
+    </mat-card>
+  </div>
+</html>

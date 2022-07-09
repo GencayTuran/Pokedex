@@ -1,19 +1,35 @@
-form{
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+html{
+  padding: 5px;
 }
 
-.inputField{
+.topIcon{
+  margin: 5px;
+}
+
+mat-form-field{
   width: 100%;
+  margin-bottom: -1em !important;
 }
 
 .navCard{
   height: 100px;
   width: 50%;
-  margin: 5px;
 }
 
-.mat-bottom-sheet-container{
-  background-color: pink;
+.navCard div{
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../assets/icons/pokeball-icon.png" ) !important;
+  background-position:5em;
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+
+.pokeCard{
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.pokeCard img{
+  width: 3em;
 }
