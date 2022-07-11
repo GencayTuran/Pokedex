@@ -10,9 +10,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './features/home/home.component';
 import { HomeSortMenuComponent } from './features/home-sort-menu/home-sort-menu.component';
 import { PokemonDetailComponent } from './features/pokemon-detail/pokemon-detail.component';
+import { PokemonCardComponent } from './shared/pokemon-card/pokemon-card.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HomeSortMenuComponent, PokemonDetailComponent],
+  declarations: [AppComponent, HomeComponent, HomeSortMenuComponent, PokemonDetailComponent, PokemonCardComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
