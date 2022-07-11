@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { POKEMONS } from '../../pokemons';
 import { faFilter } from '@fortawesome/free-solid-svg-icons';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
@@ -10,8 +10,8 @@ import { HomeSortMenuComponent } from '../home-sort-menu/home-sort-menu.componen
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  pokemons: any;
   faFilter = faFilter;
-  pokemons = POKEMONS;
 
   constructor(private matBottomSheet: MatBottomSheet) {}
 
@@ -21,6 +21,10 @@ export class HomeComponent implements OnInit {
       data: 'test',
     });
   }
+  receivePokemons($event: any) {
+    this.pokemons = $event;
+  }
+
   //after clicking sort option, dismiss sheet and trigger selected function.
 
   ngOnInit(): void {}

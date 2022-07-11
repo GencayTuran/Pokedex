@@ -16,7 +16,7 @@
   </form>
 
   <div class="navCards" fxLayout="row" fxLayoutGap="10px">
-    <!-- My Team -->
+    <!-- my team -->
     <mat-card class="navCard" matCardTitle>
       <div fxLayout="column" fxLayoutAlign="end start">
         <mat-card-title-group>
@@ -26,7 +26,7 @@
       </div>
     </mat-card>
 
-    <!-- Favorites -->
+    <!-- favorites -->
     <mat-card class="navCard" matCardTitle>
       <div fxLayout="column" fxLayoutAlign="end start">
         <mat-card-title-group>
@@ -37,29 +37,8 @@
     </mat-card>
   </div>
 
-  <div *ngFor="let pokemon of pokemons; let i = index">
-    <mat-card
-      class="pokeCard"
-      fxLayout="row"
-      fxLayoutAlign="space-between start"
-    >
-      <div fxLayout="row" fxLayoutAlign="start center">
-        <img src="{{ pokemon.sprites.front_default }}" />
-        <mat-card-title-group>
-          <mat-card-title
-            ><b>{{ pokemon.name | titlecase }}</b></mat-card-title
-          >
-          <mat-card-subtitle>Nr. {{ pokemon.id }}</mat-card-subtitle>
-        </mat-card-title-group>
-      </div>
-      <div fxLayoutAlign="start center">
-        <mat-chip-list style="margin: 10px 10px 0 0">
-          <mat-chip *ngFor="let type of pokemons[i].types">
-            {{ type.type.name }}
-          </mat-chip>
-        </mat-chip-list>
-        <mat-icon>keyboard_arrow_right</mat-icon>
-      </div>
-    </mat-card>
-  </div>
+  <!-- pokemon card -->
+  <app-pokemon-card
+    (pokemonsEmitter)="receivePokemons(pokemons)"
+  ></app-pokemon-card>
 </html>

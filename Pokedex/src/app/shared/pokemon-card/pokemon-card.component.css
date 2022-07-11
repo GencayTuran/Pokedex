@@ -1,0 +1,8 @@
+.pokeCard{
+    margin-top: 10px;
+    padding: 5px;
+  }
+  
+  .pokeCard img{
+    width: 3em;
+  }
