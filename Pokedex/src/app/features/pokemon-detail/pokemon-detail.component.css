@@ -1,0 +1,13 @@
+
+
+.dataContainer{
+    background-color: white;
+    padding: 1em;
+    border-radius: 25px;
+}
+
+h4{
+    text-transform: uppercase;
+    color: white;
+    font-size: smaller;
+}

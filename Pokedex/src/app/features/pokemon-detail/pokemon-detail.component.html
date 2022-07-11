@@ -1,1 +1,75 @@
-<p>pokem-detail works!</p>
+<!-- toolbar -->
+<div fxLayout="row" fxLayoutAlign="space-between center">
+  <div fxLayout="row" fxLayoutAlign="start center">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    <p>Terug</p>
+  </div>
+  <div>
+    <b><p>Bulbasaur</p></b>
+  </div>
+  <div>
+    <mat-icon>favorite_border</mat-icon>
+  </div>
+</div>
+
+<h1>Bulbasaur</h1>
+<!-- image -->
+
+<!-- data containers -->
+<div fxLayout="column">
+  <!-- info -->
+  <div fxLayout="column" fxLayoutAlign="center start">
+    <h4>about</h4>
+    <div>
+      <p class="mat-body">
+        Lorem Ipsum is simply dummy text of the printing and typesetting
+        industry. Lorem Ipsum has been the industry's standard dummy text ever
+        since the 1500s, when an unknown printer took a galley of type and
+        scrambled it to make a type specimen book.
+      </p>
+      <div fxLayout="row nowrap">
+        <div>
+          <p class="mat-body gray">Type</p>
+        </div>
+        <div>
+          <mat-chip-list style="margin: 10px 10px 0 0">
+            <mat-chip> Poison </mat-chip>
+          </mat-chip-list>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- stats -->
+  <div fxLayout="column" fxLayoutAlign="center start">
+    <p>statistieken</p>
+    <div>
+      <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
+        <p>HP</p>
+        <p>45</p>
+        <mat-progress-bar mode="determinate" value="45"></mat-progress-bar>
+      </div>
+    </div>
+  </div>
+
+  <!-- moveset -->
+  <div fxLayout="column" fxLayoutAlign="center start">
+    <p>moveset</p>
+    <div>
+      <div fxLayout="row">
+        <button>Level 1</button>
+        <p>Tackle</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- evolution -->
+  <div fxLayout="column" fxLayoutAlign="center start">
+    <p>evolutie</p>
+    <!-- TODO: filter pokemons by the current pokemon id -->
+    <!-- <app-pokemon-card
+      (pokemonsEmitter)="receivePokemons(pokemons)"
+    ></app-pokemon-card> -->
+  </div>
+  <button class="btn-confirm">Toevoegen aan mijn team</button>
+</div>
