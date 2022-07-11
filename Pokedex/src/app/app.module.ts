@@ -9,9 +9,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './features/home/home.component';
 import { HomeSortMenuComponent } from './features/home-sort-menu/home-sort-menu.component';
+import { PokemonDetailComponent } from './features/pokemon-detail/pokemon-detail.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HomeSortMenuComponent],
+  declarations: [AppComponent, HomeComponent, HomeSortMenuComponent, PokemonDetailComponent],
   imports: [
     AppRoutingModule,
     BrowserModule,
