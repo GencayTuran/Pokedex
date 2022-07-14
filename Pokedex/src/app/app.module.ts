@@ -5,6 +5,7 @@ import { MaterialModule } from 'src/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexModule } from '@angular/flex-layout';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './features/home/home.component';
@@ -13,7 +14,13 @@ import { PokemonDetailComponent } from './features/pokemon-detail/pokemon-detail
 import { PokemonCardComponent } from './shared/pokemon-card/pokemon-card.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HomeSortMenuComponent, PokemonDetailComponent, PokemonCardComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    HomeSortMenuComponent,
+    PokemonDetailComponent,
+    PokemonCardComponent,
+  ],
   imports: [
     AppRoutingModule,
     BrowserModule,
@@ -21,6 +28,7 @@ import { PokemonCardComponent } from './shared/pokemon-card/pokemon-card.compone
     MaterialModule,
     FlexModule,
     FontAwesomeModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

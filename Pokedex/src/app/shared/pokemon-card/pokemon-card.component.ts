@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { POKEMONS } from 'src/app/pokemons';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -8,11 +8,15 @@ import { POKEMONS } from 'src/app/pokemons';
 })
 export class PokemonCardComponent implements OnInit {
   @Output() pokemonsEmitter = new EventEmitter();
-  pokemons = POKEMONS;
+  pokemons: any;
 
-  constructor() {}
+  constructor(private dataService: DataService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.dataService.pokemonsDataList.subscribe((data) => {
+      this.pokemons = data;
+    });
+  }
 
   EmitData() {
     this.pokemonsEmitter.emit(this.pokemons);
