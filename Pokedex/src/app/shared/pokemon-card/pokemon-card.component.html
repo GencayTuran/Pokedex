@@ -1,4 +1,7 @@
-<div *ngFor="let pokemon of pokemons; let i = index">
+<div
+  routerLink="/pokemon-detail/{{ pokemon.id }}"
+  *ngFor="let pokemon of pokemons; let i = index"
+>
   <mat-card class="pokeCard" fxLayout="row" fxLayoutAlign="space-between start">
     <div fxLayout="row" fxLayoutAlign="start center">
       <img src="{{ pokemon.sprites.front_default }}" />
