@@ -2,12 +2,18 @@
 
 .dataContainer{
     background-color: white;
-    padding: 1em;
-    border-radius: 25px;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 90%;
+}
+
+.dataContainer span div:nth-child(1){
+    width: 40%;
 }
 
 h4{
     text-transform: uppercase;
     color: white;
     font-size: smaller;
+    font-weight: 500;
 }

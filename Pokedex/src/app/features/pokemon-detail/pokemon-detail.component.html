@@ -1,18 +1,20 @@
 <!-- toolbar -->
 <div fxLayout="row" fxLayoutAlign="space-between center">
-  <div fxLayout="row" fxLayoutAlign="start center">
+  <div routerLink="" fxLayout="row" fxLayoutAlign="start center">
     <mat-icon>keyboard_arrow_left</mat-icon>
     <p>Terug</p>
   </div>
   <div>
-    <b><p>Bulbasaur</p></b>
+    <b
+      ><p>{{ detailPokemon.name | titlecase }}</p></b
+    >
   </div>
   <div>
     <mat-icon>favorite_border</mat-icon>
   </div>
 </div>
 
-<h1>Bulbasaur</h1>
+<h1>{{ detailPokemon.name | titlecase }}</h1>
 <!-- image -->
 
 <!-- data containers -->
@@ -20,44 +22,97 @@
   <!-- info -->
   <div fxLayout="column" fxLayoutAlign="center start">
     <h4>about</h4>
-    <div>
-      <p class="mat-body">
-        Lorem Ipsum is simply dummy text of the printing and typesetting
-        industry. Lorem Ipsum has been the industry's standard dummy text ever
-        since the 1500s, when an unknown printer took a galley of type and
-        scrambled it to make a type specimen book.
-      </p>
-      <div fxLayout="row nowrap">
-        <div>
-          <p class="mat-body gray">Type</p>
+    <div class="dataContainer">
+      <span>
+        <p class="mat-body"></p>
+        <div fxLayout="row nowrap" fxLayoutAlign="start center">
+          <div>
+            <p class="mat-body gray">Type</p>
+          </div>
+          <div>
+            <mat-chip-list>
+              <mat-chip *ngFor="let type of detailPokemon.types">
+                {{ type.type.name }}
+              </mat-chip>
+            </mat-chip-list>
+          </div>
         </div>
-        <div>
-          <mat-chip-list style="margin: 10px 10px 0 0">
-            <mat-chip> Poison </mat-chip>
-          </mat-chip-list>
+        <div fxLayout="row nowrap" fxLayoutAlign="start center">
+          <div>
+            <p class="mat-body gray">Nummer</p>
+          </div>
+          <div>
+            {{ detailPokemon.id }}
+          </div>
         </div>
-      </div>
+        <div fxLayout="row nowrap" fxLayoutAlign="start center">
+          <div>
+            <p class="mat-body gray">Height</p>
+          </div>
+          <div>{{ detailPokemon.height / 10 }} m</div>
+        </div>
+        <div fxLayout="row nowrap" fxLayoutAlign="start center">
+          <div>
+            <p class="mat-body gray">Gewicht</p>
+          </div>
+          <div>{{ detailPokemon.weight / 10 }} kg</div>
+        </div>
+        <div fxLayout="row nowrap" fxLayoutAlign="start center">
+          <div>
+            <p class="mat-body gray">Categorie</p>
+          </div>
+          <div></div>
+        </div>
+        <div fxLayout="row nowrap" fxLayoutAlign="start center">
+          <div>
+            <p class="mat-body gray">Geslacht</p>
+          </div>
+          <div>
+            <!-- gender here -->
+          </div>
+        </div>
+        <div fxLayout="row nowrap" fxLayoutAlign="start center">
+          <div>
+            <p class="mat-body gray">Vaardigheden</p>
+          </div>
+          <div>
+            <div *ngFor="let ability of detailPokemon.abilities">
+              {{ ability.ability.name }}
+            </div>
+          </div>
+        </div>
+      </span>
     </div>
   </div>
 
   <!-- stats -->
   <div fxLayout="column" fxLayoutAlign="center start">
-    <p>statistieken</p>
-    <div>
-      <div fxLayout="row nowrap" fxLayoutAlign="space-between center">
-        <p>HP</p>
-        <p>45</p>
-        <mat-progress-bar mode="determinate" value="45"></mat-progress-bar>
+    <h4>statistieken</h4>
+    <div class="dataContainer">
+      <div
+        fxLayout="row nowrap"
+        fxLayoutAlign="space-between center"
+        *ngFor="let stat of detailPokemon.stats"
+      >
+        <p class="mat-body gray" fxFlex="15%">
+          {{ stat.stat.name | titlecase }}
+        </p>
+        <p>{{ stat.base_stat }}</p>
+        <mat-progress-bar
+          fxFlex="50%"
+          mode="determinate"
+          value="{{ stat.base_stat }}"
+        ></mat-progress-bar>
       </div>
     </div>
   </div>
 
   <!-- moveset -->
   <div fxLayout="column" fxLayoutAlign="center start">
-    <p>moveset</p>
-    <div>
-      <div fxLayout="row">
-        <button>Level 1</button>
+    <h4>moveset</h4>
+    <div class="dataContainer">
+      <div fxLayoutAlign="start center" fxLayoutGap="10px" fxLayout="row">
+        <mat-chip>Level 1</mat-chip>
         <p>Tackle</p>
       </div>
     </div>
@@ -65,11 +120,11 @@
 
   <!-- evolution -->
   <div fxLayout="column" fxLayoutAlign="center start">
-    <p>evolutie</p>
+    <h4>evolutie</h4>
     <!-- TODO: filter pokemons by the current pokemon id -->
-    <!-- <app-pokemon-card
+    <app-pokemon-card
       (pokemonsEmitter)="receivePokemons(pokemons)"
-    ></app-pokemon-card> -->
+    ></app-pokemon-card>
   </div>
   <button class="btn-confirm">Toevoegen aan mijn team</button>
 </div>
