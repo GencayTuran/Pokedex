@@ -45,7 +45,5 @@ export class HomeComponent implements OnInit {
 
   //after clicking sort option, dismiss sheet and trigger selected function.
 
-  ngOnInit(): void {
-    console.log(this.isMobile);
-  }
+  ngOnInit(): void {}
 }
