@@ -23,6 +23,7 @@ $my-theme: mat-light-theme($my-theme-primary, $my-theme-accent,$my-theme-warn);
 @include angular-material-theme($my-theme)
 }
 
+// mixins
 @mixin button-bg($bg){
     background-color: $bg;
     color: white;
@@ -38,6 +39,14 @@ $my-theme: mat-light-theme($my-theme-primary, $my-theme-accent,$my-theme-warn);
     }
 }
 
+@mixin text-gray{
+    color: rgb(186, 186, 186)
+}
+
 .btn-confirm{
     @include button-bg(#191919);
+}
+
+.gray{
+    @include text-gray();
 }
